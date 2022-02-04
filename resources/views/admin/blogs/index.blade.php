@@ -1,0 +1,104 @@
+@extends('admin.layouts.master')
+
+@section('title')
+    All Blogs
+@endsection
+
+@section('styles')
+@endsection
+
+@section('content')
+    <div class="page-inner">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">All Blogs</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="basic-datatables" class="display table table-hover">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Blog Title (English)</th>
+                                    <th>Blog Details (English)</th>
+                                    <th>Blog Title (Arabic)</th>
+                                    <th>Blog Details (Arabic)</th>
+                                    <th>Posted date</th>
+                                    <th>Blog Image</th>
+                                    <th style="width: 10%">Action</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                @foreach($blogs as $blog)
+                                    <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$blog->en_title}}</td>
+                                        <td>{{$blog->en_details}}</td>
+                                        <td>{{$blog->ar_title}}</td>
+                                        <td>{{$blog->ar_details}}</td>
+                                        <td>{{$blog->created_at}}</td>
+                                        <td><img width="100px" src="{{asset('images/blogs/'.$blog->image)}}"></td>
+                                        <td>
+                                            <div class="form-button-action">
+                                                <a href="{{route('blogs.edit',$blog->id)}}">
+                                                    <button type="button" data-toggle="tooltip" title=""
+                                                            class="btn btn-link btn-primary btn-lg"
+                                                            data-original-title="Edit Task">
+                                                        <i class="fa fa-edit"></i>
+                                                    </button>
+                                                </a>
+
+                                                <a href="{{route('blogs.destroy',$blog->id)}}" class="delete-confirm">
+                                                    <button type="button" data-toggle="tooltip" title="Delete blog"
+                                                            class="btn btn-link btn-danger btn-lg"
+                                                            data-original-title="Delete blog">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </a>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+@endsection
+
+@section('scripts')
+{{--    <script>--}}
+{{--        $('.submitDestroy').on('lick', function (e) {--}}
+{{--            e.preventDefault();--}}
+{{--            var form = $(this).parents('form');--}}
+
+{{--            swal({--}}
+{{--                title: "Are you sure?",--}}
+{{--                text: "You won't be able to revert this!",--}}
+{{--                type: "warning",--}}
+{{--                showCancelButton: true,--}}
+{{--                confirmButtonColor: "#DD6B55",--}}
+{{--                confirmButtonText: "Yes, delete it!",--}}
+{{--                closeOnConfirm: false--}}
+{{--            }, function (isConfirm) {--}}
+{{--                if (isConfirm) form.submit();--}}
+{{--            });--}}
+{{--        });--}}
+{{--    </script>--}}
+
+    <!-- Datatables -->
+    <script src="{{asset('assets/js/plugin/datatables/datatables.min.js')}}"></script>
+    <script src="{{asset('assets/js/plugin/datatables/data-table.js')}}"></script>
+
+@endsection
