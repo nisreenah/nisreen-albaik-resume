@@ -55,10 +55,13 @@ class ProfileController extends Controller
         ]);
 
         $input = $request->all();
-        Profile::create($input);
+       // dd($input->file('CV'));
+//dd($input);
+        if ($request->hasfile('CV')) {
 
-        if ($request->get('CV') != null) {
             $cv = $request->file('CV');
+
+           // dd($cv->getBasename());
 
             $original_name = strtolower(trim($cv->getClientOriginalName()));
             $file_name = time() . rand(100, 999) . $original_name;
@@ -66,6 +69,8 @@ class ProfileController extends Controller
             $cv->move(public_path('images/cv'), $file_name);
             $input['CV'] = $file_name;
         }
+
+        Profile::create($input);
 
         alert()->success('The profile was created successfully!')->persistent('Close');
         return redirect()->route('profile.index');
@@ -120,7 +125,7 @@ class ProfileController extends Controller
 
         $input = $request->all();
 
-        if ($request->get('CV') != null) {
+        if ($request->hasFile('CV')) {
             $cv = $request->file('CV');
 
             $original_name = strtolower(trim($cv->getClientOriginalName()));
@@ -132,7 +137,7 @@ class ProfileController extends Controller
             unset($input['CV']);
         }
 
-        $profile = Profile::findOrFail($id)->update($input);
+        Profile::findOrFail($id)->update($input);
         alert()->success('The profile was updated successfully!')->persistent('Close');
         return redirect()->route('profile.index');
 

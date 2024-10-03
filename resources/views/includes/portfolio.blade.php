@@ -8,16 +8,18 @@
                         <span>Filters :</span>
                         <ul id="filters">
                             <li class="active" data-filter="*">All</li>
-                            @foreach($categories as $category)
-                                <li data-filter=".{{$category->slug_name}}">{{$category->name}}</li>
-                            @endforeach
+                                @if($categories)
+                                    @foreach($categories as $category)
+                                        <li data-filter=".{{$category->slug_name}}">{{$category->name}}</li>
+                                    @endforeach
+                                @endif
                         </ul>
                     </div>
                     <div class="classic portfolio-container row isotope" id="portfolio-container">
 
                     @foreach($portfolios as $portfolio)
                         <!-- WORK 1 START -->
-                            <div class="col-sm-6 col-xs-12 portfolio-item {{$portfolio->category->slug_name}}">
+                            <div class="col-sm-6 col-xs-12 portfolio-item {{$portfolio->category->slug_name ?? 'slug_name'}}">
                                 <a class="open-project" href="{{route('project-single',$portfolio->id)}}">
                                     <div class="portfolio-column">
                                         <img style="height:252px"

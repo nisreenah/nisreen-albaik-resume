@@ -112,7 +112,7 @@
                                         <label for="ar_name">Arabic Project Name</label>
                                         <input type="text" class="form-control @error('ar_name') is-invalid @enderror"
                                                id="ar_name" name="ar_name" placeholder="Arabic Project Name"
-                                               value="{{$portfolio->en_name}}">
+                                               value="{{$portfolio->ar_name}}">
                                         @error('ar_name')
                                         <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -124,7 +124,7 @@
                                         <label for="ar_client">Arabic Client Name</label>
                                         <input type="text" class="form-control @error('ar_client') is-invalid @enderror"
                                                id="ar_client" name="ar_client" placeholder="Arabic Client Name"
-                                               value="{{$portfolio->en_name}}">
+                                               value="{{$portfolio->ar_client}}">
 
                                         @error('en_title')
                                         <span class="invalid-feedback" role="alert">
@@ -137,7 +137,7 @@
                                         <label for="ar_role">Arabic Role</label>
                                         <input type="text" class="form-control @error('ar_role') is-invalid @enderror"
                                                id="ar_role" name="ar_role" placeholder="Arabic Role"
-                                               value="{{$portfolio->en_name}}">
+                                               value="{{$portfolio->ar_role}}">
                                         @error('ar_role')
                                         <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -150,7 +150,7 @@
                                         <textarea rows="5"
                                                   class="form-control @error('ar_details') is-invalid @enderror"
                                                   id="ar_details" name="ar_details"
-                                                  placeholder="Arabic Details">{{$portfolio->en_name}}</textarea>
+                                                  placeholder="Arabic Details">{{$portfolio->ar_details}}</textarea>
                                         @error('ar_details')
                                         <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -162,7 +162,7 @@
                                         <label for="completion">Completion Date</label>
                                         <input type="date"
                                                class="form-control @error('completion') is-invalid @enderror"
-                                               id="completion" name="completion" value="{{$portfolio->en_name}}">
+                                               id="completion" name="completion" value="{{$portfolio->completion}}">
                                         @error('completion')
                                         <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
