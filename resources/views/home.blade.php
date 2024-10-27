@@ -5,9 +5,9 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>{{$profile->en_name}} | CV, Resume, Portfolio </title>
+    <title>{{$profile->en_name ?? 'null'}} | CV, Resume, Portfolio </title>
     <meta name="description"
-          content="{{$profile->en_name}} CV/Resume, personal portfolio.">
+          content="{{$profile->en_name ?? 'null'}} CV/Resume, personal portfolio.">
     <meta name="author" content="LionCoders"/>
     <link rel="icon" href="{{asset('resume/images/favicon.ico')}}"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>
@@ -39,11 +39,13 @@
     <div class="container">
         <div class="name-block">
             <div class="name-block-container">
-                <h1><span>Hi, I'm</span>{{$profile->en_name}}</h1>
-                <h2>{{$profile->en_major}}</h2>
-                <a target="_blank" href="" class="btn btn-download">Download Resume</a>
+                <h1><span>Hi, I'm</span>{{$profile->en_name ?? 'English name'}}</h1>
+                <h2>{{$profile->en_major ?? 'English Major' }}</h2>
+                <a target="_blank" href="{{asset($profile->CV)}}" class="btn btn-download">Download Resume</a>
                 <ul class="social">
-                    <li><a href="{{$profile->facebook}}"><i style="font-size:20px" class="ion-social-facebook"></i></a></li>
+                    @if(!empty($profile->facebook))
+                        <li><a href="{{$profile->facebook}}"><i style="font-size:20px" class="ion-social-facebook"></i></a></li>
+                    @endif
                     <li><a href="{{$profile->twitter}}"><i style="font-size:20px" class="ion-social-twitter"></i></a></li>
                     <li><a href="{{$profile->skype}}"><i style="font-size:20px" class="ion-social-skype"></i></a></li>
                     <li><a href="{{$profile->linkedIn}}"><i style="font-size:20px" class="ion-social-linkedin"></i></a></li>
@@ -62,6 +64,7 @@
                     <h2 class="portfolio menu-item">Portfolio</h2>
                 </div>
             </div>
+
             <div class="blog-block  menu-block">
                 <div class="blog-block-container">
                     <h2 class="blog menu-item">Blog</h2>

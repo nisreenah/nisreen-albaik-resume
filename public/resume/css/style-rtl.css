@@ -13,7 +13,7 @@
 /*------------------------------------------------------------------
 
     [Table of contents]
-    
+
     0. General Styles
     1. Preloader
     2. Home Styles
@@ -763,10 +763,10 @@ h2.menu-item:after {
 }
 
 .sidebar-menu {
-    background: #111; 
+    background: #111;
     height: 100%;
     left: 0;
-    position: fixed; 
+    position: fixed;
     width: 20%;
 }
 
@@ -1068,7 +1068,7 @@ h2.menu-item:after {
 }
 
 .subheading {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 300;
     line-height: 2em;
     margin-bottom: 30px;
@@ -2809,16 +2809,16 @@ ul.pagination li {
 -------------------------------------------------------------------*/
 
 .buy-now {
-    background-color: #82B441;  
-    color: #FFF; 
-    display: block; 
-    font-size: 13px; 
-    font-weight: 500; 
+    background-color: #82B441;
+    color: #FFF;
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
     left: 50px;
     letter-spacing: 1.5px;
-    padding: 3px 15px; 
+    padding: 3px 15px;
     position: absolute;
-    top: 20px; 
+    top: 20px;
     z-index: 999
 }
 .buy-now:hover {

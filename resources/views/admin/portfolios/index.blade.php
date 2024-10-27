@@ -42,7 +42,7 @@
                                         <td><img width="100px" src="{{asset('images/portfolios/'.$portfolio->image)}}"></td>
                                         <td>{{$portfolio->en_client}}</td>
                                         <td>{{$portfolio->completion}}</td>
-                                        <td>{{$portfolio->en_details}}</td>
+                                        <td>{{str_limit($portfolio->en_details, 30)}}</td>
                                         <td>{{$portfolio->category->name}}</td>
                                         <td><a href="{{route('portfolio.gallery',$portfolio->id)}}">Go to the Gallery</a></td>
                                         <td>

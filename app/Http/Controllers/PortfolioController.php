@@ -50,7 +50,8 @@ class PortfolioController extends Controller
         $this->validate($request, [
             'en_name' => 'required',
             //'ar_name' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+//            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'image' => 'required',
             'en_client' => 'required',
             //'ar_client' => 'required',
             'completion' => 'required',

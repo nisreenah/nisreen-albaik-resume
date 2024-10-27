@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Blog;
+use App\Course;
 use Illuminate\Http\Request;
 use Auth;
 use Alert;
 
-class BlogsController extends Controller
+class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
-        return view('admin.blogs.index', compact('blogs'));
+        $courses = Course::all();
+        return view('admin.courses.index', compact('courses'));
     }
 
     /**
@@ -27,7 +27,7 @@ class BlogsController extends Controller
      */
     public function create()
     {
-        return view('admin.blogs.create');
+        return view('admin.courses.create');
     }
 
     /**
@@ -38,24 +38,22 @@ class BlogsController extends Controller
         $this->validate($request, [
             'en_title' => 'required',
             'ar_title' => 'nullable',
-            'en_details' => 'required',
-            'ar_details' => 'nullable',
+            'year' => 'required',
             'image' => 'required',
         ]);
 
         $input = $request->all();
-        $input['posted_by'] = Auth::id();
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $filename = $image->getClientOriginalName();
-            $image->move(public_path('images/blogs'), $filename);
+            $image->move(public_path('images/courses'), $filename);
             $input['image'] = $request->file('image')->getClientOriginalName();
         }
 
-        Blog::create($input);
-        Alert::success('The blog was created successfully!')->persistent('Close');
-        return redirect()->route('blogs.index');
+        Course::create($input);
+        Alert::success('The Course was created successfully!')->persistent('Close');
+        return redirect()->route('courses.index');
     }
 
     /**
@@ -66,8 +64,8 @@ class BlogsController extends Controller
      */
     public function edit($id)
     {
-        $blog = Blog::findOrFail($id);
-        return view('admin.blogs.edit', compact('blog'));
+        $course = Course::findOrFail($id);
+        return view('admin.courses.edit', compact('course'));
     }
 
     /**
@@ -78,8 +76,7 @@ class BlogsController extends Controller
         $this->validate($request, [
             'en_title' => 'required',
             'ar_title' => 'nullable',
-            'en_details' => 'required',
-            'ar_details' => 'nullable',
+            'year' => 'required',
         ]);
 
         $input = $request->all();
@@ -93,10 +90,10 @@ class BlogsController extends Controller
             unset($input['image']);
         }
 
-        $blog = Blog::findOrFail($id)->update($input);
+        $course = Course::findOrFail($id)->update($input);
 
-        Alert::success('The blog was updated successfully!')->persistent('Close');
-        return redirect()->route('blogs.index');
+        Alert::success('The course was updated successfully!')->persistent('Close');
+        return redirect()->route('courses.index');
     }
 
     /**
@@ -107,8 +104,8 @@ class BlogsController extends Controller
      */
     public function destroy($id)
     {
-        Blog::findOrFail($id)->delete();
-        Alert::success('The blog was deleted successfully!')->persistent('Close');
-        return redirect()->route('blogs.index');
+        Course::findOrFail($id)->delete();
+        Alert::success('The course was deleted successfully!')->persistent('Close');
+        return redirect()->route('courses.index');
     }
 }
