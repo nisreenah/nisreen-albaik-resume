@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d86ac9af-e6a1-4867-8ac6-1950c2e61536" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PortfolioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PortfolioController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resume/css/style-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume/css/style-rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resume/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/portfolios/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/portfolios/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/portfolios/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/portfolios/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/profile/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/profile/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/includes/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/includes/portfolio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/portfolio.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/includes/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/profile.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +172,8 @@
       <workItem from="1696680056008" duration="6319000" />
       <workItem from="1705228082594" duration="1311000" />
       <workItem from="1715625052465" duration="7934000" />
-      <workItem from="1727953397996" duration="79000" />
+      <workItem from="1727953397996" duration="641000" />
+      <workItem from="1727957228629" duration="5000" />
     </task>
     <servers />
   </component>
